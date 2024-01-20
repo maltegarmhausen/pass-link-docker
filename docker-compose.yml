@@ -1,9 +1,9 @@
 version: '3'
 services:
   web:
-    image: pass-link-to-container:latest
+    image: mcg-redirection-test:latest
     ports:
-      - "8080:8080"
+      - "8081:8081"
     environment:
     # angabe customer base url über app <- container-env <- instance-env <- userdata <- cloudformation XXX.id-report.com
     - CONFIG_PAGE=${CUSTOMER_URL}
