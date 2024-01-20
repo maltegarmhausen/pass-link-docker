@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-# Load configuration from environment variable or use default value
+# Load configuration from environment variable or use a default value
 config_page = os.environ.get('CONFIG_PAGE', '/default')
 
 @app.route('/')
@@ -15,4 +15,5 @@ def redirect_page():
     return redirect(config_page)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.debug = True
+    app.run(host='0.0.0.0', port=8080)

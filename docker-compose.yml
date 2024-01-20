@@ -1,8 +1,10 @@
 version: '3'
 services:
   web:
-    build: .
+    image: pass-link-to-container:latest
     ports:
-      - "5000:5000"
+      - "8080:8080"
     environment:
-      - CONFIG_PAGE=${CONFIG_PAGE}
+    # angabe customer base url über app <- container-env <- instance-env <- userdata <- cloudformation XXX.id-report.com
+    - CONFIG_PAGE=${CUSTOMER_URL}
+    # - CONFIG_PAGE=https://google.com
